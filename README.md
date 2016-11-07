@@ -17,7 +17,7 @@ python manage.py db upgrade
 
 # Javascript & Frontend
 npm i -g gulp webpack
-yarn
+yarn # or npm i
 ```
 
 ### Running
