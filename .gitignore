@@ -1,0 +1,7 @@
+.DS_Store
+venv/*
+*.pyc
+migrations/*
+node_modules/*
+*app.db*
+yarn.lock

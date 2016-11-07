@@ -1,0 +1,6 @@
+// Import vendor scss
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Import custom app scss
+@import 'main';
+@import 'account';

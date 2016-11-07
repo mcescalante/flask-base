@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% if title %}
+    <title>{{ title }} | gitsavX</title>
+    {% else %}
+    <title>gitsavX</title>
+    {% endif %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}"> -->
+  </head>
+  
+  <body class="{% block bodyclass %}{% endblock %}">
+
+    {% block header %}{% endblock %}
+
+    <div class="navbar navbar-light navbar-right bg-faded">
+
+      <div class="nav navbar-nav"> 
+        <a {% if request.path == '/' %} class="active nav-item nav-link"{% endif %} class="nav-item nav-link" href="/">Dashboard</a>
+
+        {% if current_user.is_authenticated %}
+          <a class="nav-item nav-link" href="/logout/">Logout</a>
+        {% else %}
+          <a class="nav-item nav-link" href="/login/">Login</a>
+        {% endif %}
+
+        
+      </div>
+
+    </div>
+
+    {% block content %}{% endblock %}
+
+  </body>
+
+  <script src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+  {% block scriptinclude %}{% endblock %}
+
+  {% include "/partials/_messageflash.html"%}
+  
+</html>

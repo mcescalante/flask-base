@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}login{% endblock %}
+
+{% block content %}
+
+<div class="container login-container">
+
+  {% from "/partials/_formhelpers.html" import render_field %}
+  <form action="" method="post" name="login">
+
+    {{ form.csrf_token }}
+    
+    <div class="input-group input-group-lg input-centered login-input-container">
+      {{ render_field(form.email, class='form-control login-input', placeholder='') }}
+    </div>
+
+    <div class="input-group input-group-lg input-centered login-input-container">
+     {{ render_field(form.password, class='form-control login-input', placeholder='') }}
+    </div>
+
+    <button type="submit" class="btn btn-primary login-btn">LOGIN</button>
+
+  </form>
+
+
+
+</div>
+
+{% endblock %}

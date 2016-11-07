@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}signup{% endblock %}
+
+{% block content %}
+
+<div class="container signup-container">
+
+  {% from "/partials/_formhelpers.html" import render_field %}
+  <form action="" method="post" name="signup">
+    
+    {{ form.csrf_token }}
+
+    <div class="input-group input-group-lg input-centered signup-input-container">
+      {{ render_field(form.email, class='form-control signup-input', placeholder='Email') }}
+    </div>
+
+    <div class="input-group input-group-lg input-centered signup-input-container">
+     {{ render_field(form.password, class='form-control signup-input', placeholder='Password') }}
+    </div>
+
+    <div class="input-group input-group-lg input-centered signup-input-container">
+     {{ render_field(form.confirm, class='form-control signup-input', placeholder='Confirm Password') }}
+    </div>
+
+    <button type="submit" class="btn btn-primary signup-btn">Sign Up</button>
+
+  </form>
+
+</div>
+
+{% endblock %}
