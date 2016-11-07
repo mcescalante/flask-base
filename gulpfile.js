@@ -30,7 +30,7 @@ gulp.task('connect', function() {
 });
  
 gulp.task('html', function () {
-  gulp.src('./app/templates/*.html')
+  gulp.src('app/templates/*.html')
     .pipe(connect.reload());
 });
 
@@ -38,6 +38,6 @@ gulp.task('watch', function() {
   gulp.watch([
     PATHS.BASE.CSS + '*.scss',
   ], ['css']);
-  gulp.watch(['./app/templates/*.html'], ['html']);
-  gulp.watch(['./app/templates/**/*.html'], ['html']);
+  gulp.watch(['app/templates/*.html'], ['html']);
+  gulp.watch(['app/templates/**/*.html'], ['html']);
 });

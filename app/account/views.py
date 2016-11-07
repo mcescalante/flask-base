@@ -65,6 +65,11 @@ def logout():
   flash('Logged out successfully', 'success')
   return redirect(url_for('index'))
 
+# Login manager configuration / customization
 @lm.user_loader
 def load_user(id):
   return User.query.get(int(id))
+
+@lm.unauthorized_handler
+def unauthorized():
+    return abort(403)

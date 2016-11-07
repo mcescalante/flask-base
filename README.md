@@ -31,6 +31,8 @@ python run.py
 gulp
 
 # To recompile bundle.js (if you change app.js), run the following:
+npm run buildjs
+# You can also run the actual webpack command itself if you prefer:
 webpack app/static/js/app.js app/static/js/bundle.js
 
 # If you change the models, you have to migrate and upgrade again:

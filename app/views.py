@@ -36,4 +36,8 @@ def sitemap():
 # Error handlers
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html'), 404
+  return render_template('error/404.html'), 404
+
+@app.errorhandler(403)
+def page_not_found(error):
+  return render_template('error/403.html'), 403

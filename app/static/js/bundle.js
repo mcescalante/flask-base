@@ -44,7 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {global.jQuery = __webpack_require__(1);
+	/* WEBPACK VAR INJECTION */(function(global) {// TODO shim this properly in webpack config
+
+	// Boostrap
+	global.jQuery = __webpack_require__(1);
 	window.Tether = __webpack_require__(3);
 	__webpack_require__(4);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
