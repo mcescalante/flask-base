@@ -7,12 +7,12 @@ from wtforms.fields.html5 import DecimalRangeField
 from wtforms.widgets import TextInput
 
 class LoginForm(Form):
-    email    = StringField('Email', validators = [Required()])
-    password = PasswordField('Password', validators = [Required()])
-    remember = BooleanField('remember', default = False)
+  email    = StringField('Email', validators = [Required()])
+  password = PasswordField('Password', validators = [Required()])
+  remember = BooleanField('remember', default = False)
 
 class SignUpForm(Form):
-    email = StringField('Email', validators = [Required(), Email()]) 
-    password = PasswordField('Password', validators = [Required(),
-        EqualTo('confirm', message = 'Passwords must match')])
-    confirm = PasswordField('Repeat Password')
+  email = StringField('Email', validators = [Required(), Email()]) 
+  password = PasswordField('Password', validators = [Required(),
+    EqualTo('confirm', message = 'Passwords must match')])
+  confirm = PasswordField('Repeat Password')

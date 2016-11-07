@@ -21,4 +21,8 @@ lm = LoginManager()
 lm.init_app(app)
 CsrfProtect(app)
 
+# Blueprints
+from app.account.views import accounts as accounts
+app.register_blueprint(accounts)
+
 from app import models, views
