@@ -4,6 +4,9 @@
   "main": "gulpfile.js",
   "author": "Mike Escalante <mcescalante@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "buildjs": "webpack app/static/js/app.js app/static/js/bundle.js --display-error-details"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
