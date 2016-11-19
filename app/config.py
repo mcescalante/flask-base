@@ -13,12 +13,12 @@ DATABASE_CONNECT_OPTIONS = {}
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Use these for SQLALCHEMY_DATABASE_URI for MySQL or Postgres
+# Replace "dbname" with your database name
 
 # MySQL
-#SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'mysql://root@localhost:8889/assassins2016-r5staging')
+#SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'mysql://root@localhost:8889/dbname')
 #SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 # Postgres
-#SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'postgresql://localhost/coffeedb')
+#SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'postgresql://localhost/dbname')
 #SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-#SQLALCHEMY_TRACK_MODIFICATIONS = True
