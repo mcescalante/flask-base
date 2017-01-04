@@ -17,8 +17,8 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # MySQL
 #SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'mysql://root@localhost:8889/dbname')
-#SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+#SQLALCHEMY_MIGRATE_REPO = os.path.join(_basedir, 'db_repository')
 
 # Postgres
 #SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'postgresql://localhost/dbname')
-#SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+#SQLALCHEMY_MIGRATE_REPO = os.path.join(_basedir, 'db_repository')

@@ -10,6 +10,7 @@ itsdangerous==0.24
 Jinja2==2.8
 Mako==1.0.5
 MarkupSafe==0.23
+psycopg2==2.6.2
 python-editor==1.0.1
 requests==2.11.1
 SQLAlchemy==1.1.3
