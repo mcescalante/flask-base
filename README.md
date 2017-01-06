@@ -29,6 +29,9 @@ python manage.py db upgrade
 # Javascript & Frontend
 npm i -g gulp webpack
 yarn # or npm i
+
+# Create js bundle
+npm run buildjs
 ```
 
 ### Running
