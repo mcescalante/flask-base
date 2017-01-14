@@ -5,4 +5,5 @@ migrations/*
 node_modules/*
 *app.db*
 bundle.js
+bundle.min.js
 yarn.lock
