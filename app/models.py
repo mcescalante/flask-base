@@ -17,11 +17,11 @@ class User(db.Model):
   __tablename__ = 'user'
   id = db.Column(db.Integer, primary_key=True)
   _password = db.Column('password', db.String(120), nullable = False)
+  email = db.Column(db.String(120), nullable = False, index = True, unique = True)
   createdOn = db.Column(db.DateTime)
   updatedOn = db.Column(db.DateTime)
   lastLoggedIn = db.Column(db.DateTime)
   active = db.Column(db.SmallInteger, default = 1)
-  email = db.Column(db.String(120))
   fname = db.Column(db.String(120))
   lname = db.Column(db.String(120))
   active = db.Column(db.Boolean, default=True)

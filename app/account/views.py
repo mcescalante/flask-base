@@ -19,6 +19,12 @@ def signup():
 
   form = SignUpForm(request.form)
   if form.validate_on_submit():
+    
+    # Handle duplicate account creation, could be more elegant
+    if User.query.filter_by(email=form.email):
+      flash('Email already exists, try again', 'warning')
+      return redirect(url_for('accounts.signup')) 
+    
     user = User()
     form.populate_obj(user)
     user.createdOn = datetime.datetime.now()

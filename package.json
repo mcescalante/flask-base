@@ -1,8 +1,8 @@
 {
-  "name": "grow-web",
+  "name": "flask-base",
   "version": "1.0.0",
   "main": "gulpfile.js",
-  "author": "Mike Escalante <mcescalante@gmail.com>",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "buildjs": "webpack app/static/js/app.js app/static/js/bundle.js --display-error-details"
