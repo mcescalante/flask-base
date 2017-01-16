@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "buildjs": "webpack --display-error-details",
-    "buildprod": "webpack --optimize-minimize"
+    "buildprod": "webpack -p --optimize-minimize"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

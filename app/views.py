@@ -1,9 +1,9 @@
 from app import app, lm, db
 from flask import render_template, flash, redirect, session, url_for, request, g, abort
 from flask_login import login_user, logout_user, current_user, login_required
-from models import *
-from config import *
-from forms import *
+from .models import *
+from .config import *
+from .forms import *
 import requests, json, time, datetime
 
 # Needed for SVGs to be served with proper mimetype

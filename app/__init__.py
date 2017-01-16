@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_script import Manager
 from flask_wtf.csrf import CsrfProtect
-from config import _basedir
+from .config import _basedir
 
 # App
 app = Flask(__name__)
