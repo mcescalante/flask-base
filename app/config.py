@@ -12,6 +12,10 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'app.db')
 DATABASE_CONNECT_OPTIONS = {}
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+#Mail
+USE_MAIL = False #Change this to False if you would like to disable email features
+SPARKPOST_API_KEY = ''
+
 # Use these for SQLALCHEMY_DATABASE_URI for MySQL or Postgres
 # Replace "dbname" with your database name
 

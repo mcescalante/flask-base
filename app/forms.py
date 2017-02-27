@@ -15,4 +15,4 @@ class SignUpForm(FlaskForm):
   email = StringField('Email', validators = [Required(), Email()]) 
   password = PasswordField('Password', validators = [Required(),
     EqualTo('confirm', message = 'Passwords must match')])
-  confirm = PasswordField('Repeat Password')
+  confirm = PasswordField('Repeat Password', validators= [Required()])

@@ -8,19 +8,14 @@
 
   {% from "/partials/_formhelpers.html" import render_field %}
   <form action="" method="post" name="login">
-
     {{ form.csrf_token }}
+
+    <div class="form-group">
+      {{ render_field(form.email, class='form-control', placeholder='') }}
+      {{ render_field(form.password, class='form-control login-input', placeholder='') }}
+    </div>
     
-    <div class="input-group input-group-lg input-centered login-input-container">
-      {{ render_field(form.email, class='form-control login-input', placeholder='') }}
-    </div>
-
-    <div class="input-group input-group-lg input-centered login-input-container">
-     {{ render_field(form.password, class='form-control login-input', placeholder='') }}
-    </div>
-
-    <button type="submit" class="btn btn-primary login-btn">LOGIN</button>
-
+    <button type="submit" class="btn btn-primary login-btn">Login</button>
   </form>
 
 
@@ -28,3 +23,6 @@
 </div>
 
 {% endblock %}
+
+
+If you think that you are going to love something, give it a try. You're going to kick yourself in the butt for the rest of your life if you dont

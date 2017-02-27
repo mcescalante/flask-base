@@ -9,7 +9,7 @@ from .config import _basedir
 
 # App
 app = Flask(__name__)
-app.config.from_object('app.config')
+config = app.config.from_object('app.config')
 
 # Database
 db = SQLAlchemy(app)
@@ -20,6 +20,13 @@ manager = Manager(app)
 lm = LoginManager()
 lm.init_app(app)
 CsrfProtect(app)
+
+# Mail
+if app.config['USE_MAIL'] is True:
+  from sparkpost import SparkPost
+  sp = SparkPost()
+else:
+  pass
 
 # Blueprints
 from app.account.views import accounts as accounts

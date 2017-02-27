@@ -20,24 +20,31 @@
 
     {% block header %}{% endblock %}
 
-    <div class="navbar navbar-light navbar-right bg-faded">
+    {# 
+      TODO: This will need to change to navbar-toggleable-md again after alpha 6
+      see https://github.com/twbs/bootstrap/issues/21691 
+    #}
+    <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
 
-      <div class="nav navbar-nav"> 
-        <a {% if request.path == '/' %} class="active nav-item nav-link"{% endif %} class="nav-item nav-link" href="/">Home</a>
-
-        <div class="float-lg-right">
-          {% if current_user.is_authenticated %}
-            <a class="nav-item nav-link" href="/logout/">Logout</a>
-          {% else %}
-            <a class="nav-item nav-link" href="/login/">Login</a>
-            <a class="nav-item nav-link" href="/signup/">Signup</a>
-          {% endif %}
-        </div>
-
-        
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-sm-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('accounts.login')}}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('accounts.signup')}}">Signup</a>
+          </li>
+        </ul>
       </div>
+    </nav>
 
-    </div>
 
     {% block content %}{% endblock %}
 

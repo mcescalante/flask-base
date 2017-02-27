@@ -1,4 +1,5 @@
 from app import app, lm, db
+if app.config['USE_MAIL'] is True: from app import sp
 from app.models import *
 from app.forms import LoginForm, SignUpForm
 from flask import render_template, flash, redirect, session, url_for, request, g, abort
