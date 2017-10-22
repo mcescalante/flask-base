@@ -20,31 +20,35 @@
 
     {% block header %}{% endblock %}
 
-    {# 
-      TODO: This will need to change to navbar-toggleable-md again after alpha 6
-      see https://github.com/twbs/bootstrap/issues/21691 
-    #}
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Navbar</a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-sm-0">
+        <ul class="navbar-nav mr-auto mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
           </li>
+        </ul>
+        <ul class="navbar-nav">
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('accounts.logout')}}">Logout</a>
+          </li>        
+          {% endif %}
+          {% if not current_user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('accounts.login')}}">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('accounts.signup')}}">Signup</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
-
 
     {% block content %}{% endblock %}
 
@@ -52,7 +56,6 @@
 
   <script src="{{ url_for('static', filename='js/bundle.min.js') }}"></script>
   {% block scriptinclude %}{% endblock %}
-
   {% include "/partials/_messageflash.html"%}
   
 </html>

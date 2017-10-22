@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_script import Manager
-from flask_wtf.csrf import CsrfProtect
+from flask_wtf.csrf import CSRFProtect
 from .config import _basedir
 
 # App
@@ -19,7 +19,7 @@ manager = Manager(app)
 # Login & Forms
 lm = LoginManager()
 lm.init_app(app)
-CsrfProtect(app)
+CSRFProtect(app)
 
 # Mail
 if app.config['USE_MAIL'] is True:

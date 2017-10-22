@@ -1,11 +1,8 @@
-// TODO shim this properly in webpack config
+// Import third party javascript libs here
+// babel-loader is used so ES5/6, etc. should be fine
+import 'bootstrap';
 
-// jQuery, bootstrap, tether, toastr
-global.jQuery = require('jquery/dist/jquery.min.js');
-window.jQuery = global.jQuery;
-window.$ = global.jQuery;
-
-window.Tether = require('tether/dist/js/tether.min.js');
-require('bootstrap/dist/js/bootstrap.min.js');
-
+// Global jQuery and window config
+window.jQuery = $;
+window.$ = $;
 window.toastr = require('toastr/build/toastr.min.js');

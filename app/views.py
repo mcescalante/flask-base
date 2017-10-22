@@ -1,6 +1,6 @@
 from app import app, lm, db
 if app.config['USE_MAIL'] is True: from app import sp
-from flask import render_template, flash, redirect, session, url_for, request, g, abort
+from flask import render_template, flash, redirect, session, url_for, request, g, abort, send_from_directory
 from flask_login import login_user, logout_user, current_user, login_required
 from .models import *
 from .config import *

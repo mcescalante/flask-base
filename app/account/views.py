@@ -19,10 +19,11 @@ def signup():
     return redirect(url_for('index'))
 
   form = SignUpForm(request.form)
+
   if form.validate_on_submit():
-    
+
     # Handle duplicate account creation, could be more elegant
-    if User.query.filter_by(email=form.email):
+    if User.query.filter_by(email=form.email.data).first():
       flash('Email already exists, try again', 'warning')
       return redirect(url_for('accounts.signup')) 
     

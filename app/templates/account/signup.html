@@ -7,7 +7,7 @@
 <div class="container signup-container">
 
   {% from "/partials/_formhelpers.html" import render_field %}
-  <form action="" method="post" name="signup">
+  <form action="{{url_for('accounts.signup')}}" method="POST" name="signup">
     {{ form.csrf_token }}
 
     <div class="form-group">
