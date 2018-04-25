@@ -9,7 +9,7 @@ from .config import _basedir
 
 # App
 app = Flask(__name__)
-config = app.config.from_object('app.config')
+config = app.config.from_object('app.settings')
 
 # Database
 db = SQLAlchemy(app)
