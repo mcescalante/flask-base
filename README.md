@@ -15,7 +15,6 @@ This is a strong Flask base/boilerplate focusing on simplicity, while still havi
     - [Mail](#setting-up-mail)
 - [Deploying](#deploying)
 
-
 ### Features
 
 - Always updated, production ready, modern tooling
@@ -32,9 +31,8 @@ This is a strong Flask base/boilerplate focusing on simplicity, while still havi
 
 ```shell
 # Python
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements/base.txt
+pipenv install
+pipenv shell
 
 # Database
 python manage.py db init
@@ -83,15 +81,7 @@ This boilerplate is ready for MySQL and Postgres, but uses sqlite by default. If
 ### Setting up mail
 *Optional*
 
-A lot of applications tend to use Flask-Mail and suggest creating a gmail address to send email with, via smtp. While this works fine for small things, it isn't production-ready and Gmail doesn't exist to send transactional email (forgot password, confirm email, etc.). For this reason, this boilerplate mail setup uses Sparkpost which has 15k emails per month for free (used to be 100k until sometime in 2017). I am not sponsored or compensated in any way by Sparkpost, it's just worked fine for me for sending tranasctional mail free.
-
-1. Create an account on sparkpost.com
-2. In your local environment, set the `SPARKPOST_API_KEY`:
-    `export SPARKPOST_API_KEY='yourkeyhere'`
-3. Update mail config variables in config.py 
-4. All set!
-
-If you use another transactional mail platform, it should be very simple to drop in here by replacing the email send calls with another library or via REST with the requests library. Feel free to submit a PR with a new branch for any alternative email setups.
+Removed for now.
 
 ### Deploying
 
@@ -100,5 +90,3 @@ In order to deploy, you need to move your entire application & database to a ser
 Basic instructions for a VPS can be found in [a gist here](https://gist.github.com/mcescalante/5db616b9a826605f1df35f79b09cf6f6) but automated scripting & more will be coming soon.
 
 More coming soon!
-
-_Pst: check out the TODO file for a peek at what I would like to make happen soon, but haven't yet_

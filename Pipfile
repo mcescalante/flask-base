@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+alembic = "*"
+certifi = "*"
+chardet = "*"
+click = "*"
+Flask = "*"
+Flask-Login = "*"
+Flask-Migrate = "*"
+Flask-Script = "*"
+Flask-SQLAlchemy = "*"
+Flask-WTF = "*"
+gunicorn = "*"
+idna = "*"
+itsdangerous = "*"
+Jinja2 = "*"
+Mako = "*"
+MarkupSafe = "*"
+python-dateutil = "*"
+python-editor = "*"
+requests = "*"
+six = "*"
+SQLAlchemy = "*"
+urllib3 = "*"
+Werkzeug = "*"
+WTForms = "*"
+mysqlclient = "*"
+psycopg2 = "*"
+
+[requires]
+python_version = "2.7"
